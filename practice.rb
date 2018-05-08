@@ -1,7 +1,8 @@
 #find the dupes
 def find_dupes(numbers)
+  new = '';
     duplicates = numbers.select{ |number| numbers.count(number) > 1}
-   return duplicates.uniq
+   duplicates.uniq
 end
 numbers = 1,5,3,1,1,6,5,2
 puts find_dupes(numbers)
@@ -19,3 +20,31 @@ def flip_words(sentence)
    sentence
 end
 puts flip_words("this is awesome yeah really it is")
+#merge two hashes
+#if dupe is found
+#1.
+# def merge_hashes(hashes)
+#     # Write your code here.
+#
+#
+# end
+#
+# sort second string based on first sort
+
+list1 = "c,a,e,b,d|has,this,ordered,list,been"
+def sort_by(lists)
+    part1=[]
+    part2=[]
+    lists =  lists.split("|")
+    part1= lists[0].split(",")
+    part2 = lists[1].split(",")
+    r_part1, r_part2 = part1.zip(part2).sort_by(&:first).transpose
+    puts r_part2.join(",")
+
+end
+puts sort_by(list1)
+
+def permut(word)
+  word.chars.to_a.permutation.map(&:join)
+end
+puts permut("wordy")
