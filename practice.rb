@@ -61,3 +61,23 @@ def countwords(phrase)
   puts counts
 end
 puts countwords("olly olly in come free")
+
+# example, the inputs
+# clean up differently formatted telephone numbers
+#by removing punctuation and the country code (1) if present.
+# +1 (613)-995-0253
+# 613-995-0253
+# 1 613 995 0253
+# 613.995.0253
+# should all produce the output
+#
+# 6139950253
+temp = ''
+def cleandigits(number)
+  temp = number.gsub(/\D/, '')
+  if temp.length > 10
+    temp[0]=''
+  end
+  return temp
+end
+puts cleandigits("+1 (613)-995-0253")
