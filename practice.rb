@@ -29,8 +29,8 @@ puts flip_words("this is awesome yeah really it is")
 #
 # end
 #
-# sort second string based on first sort
 
+# sort second string based on first sort
 list1 = "c,a,e,b,d|has,this,ordered,list,been"
 def sort_by(lists)
     part1=[]
@@ -44,6 +44,7 @@ def sort_by(lists)
 end
 puts sort_by(list1)
 
+#all possible permuations for a string combo
 def permut(word)
   word.chars.to_a.permutation.map(&:join)
 end
