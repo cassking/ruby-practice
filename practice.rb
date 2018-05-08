@@ -49,3 +49,15 @@ def permut(word)
   word.chars.to_a.permutation.map(&:join)
 end
 puts permut("wordy")
+
+#Given a phrase, count the occurrences of each word in that phrase.
+#
+def countwords(phrase)
+  counts = Hash.new(0)
+  array = phrase.split(" ")
+  array.each do | word |
+     counts[word] +=1
+  end
+  puts counts
+end
+puts countwords("olly olly in come free")
